@@ -1,0 +1,29 @@
+.menu_wrapper{
+  width: 22%;
+  background-color: #2F5AA8;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  .block{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .menuFooter{
+    width: 100%;
+    align-self: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-top: 2px solid white;
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    color: white;
+  }
+}
