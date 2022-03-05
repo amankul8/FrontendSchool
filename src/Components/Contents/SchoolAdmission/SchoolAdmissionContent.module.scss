@@ -1,0 +1,9 @@
+@import "../../../Generic/Styles/ContentsGenericStyles.scss";
+.home_content{
+  @extend %content_wrapper;
+
+  .content_block{
+    @extend %content_in_block;
+  }
+  padding: 50px 0;
+}

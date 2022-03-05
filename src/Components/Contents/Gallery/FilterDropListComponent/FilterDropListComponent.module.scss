@@ -1,0 +1,41 @@
+
+.wrapper {
+  z-index: 1;
+  position: relative;
+  align-self: start;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 300ms ease-in-out;
+  font-family: Roboto sans-serif;
+  cursor: pointer;
+  width: 160px;
+  margin-top: 10px;
+  border-radius: 5px;
+  &:hover div{
+    display: flex;
+  }
+  .list{
+    display: none;
+    position: absolute;
+    flex-wrap: wrap;
+    width: 150%;
+    transition: 300ms ease-in-out;
+    background-color: white;
+    border-radius: 5px;
+  }
+  span{
+    width: 100%;
+    padding: 8px 12px;
+    &:hover{
+      border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+  }
+  .title{
+    width: 100%;
+    padding: 8px 12px;
+    color: #7391FC;
+    &:hover{
+      border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.modal_window_context_wrapper{
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  img{
+    height: 80vh;
+    max-width: 100%;
+  }
+  p{
+    width: 100%;
+    text-align: center;
+  }
+}

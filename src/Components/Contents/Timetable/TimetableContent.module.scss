@@ -1,0 +1,13 @@
+@import "../../../Generic/Styles/ContentsGenericStyles.scss";
+.home_content{
+  @extend %content_wrapper;
+
+  .content_block{
+    @extend %content_in_block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-around;
+    padding: 50px;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../../../Generic/Styles/ContentsGenericStyles.scss";
+.home_content{
+  @extend %content_wrapper;
+
+  .content_block{
+    @extend %content_in_block;
+  }
+  .context_wrapper{
+    width: 100%;
+    padding: 3% 30px;
+    button{
+      cursor: pointer;
+      color: white;
+      background-color: #2F5AA8;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    strong{
+      display: block;
+      width: 100%;
+      margin: 5vh 0 1vh 0;
+      font-size: 20px;
+    }
+    img{
+      margin: 20px 0;
+      width: 100%;
+      border-radius: 5px;
+    }
+    p{
+      font-family: "PT_Root_UI", Arial sans-serif;
+      font-size: 0.95rem;
+      line-height: 150%;
+      color: #4B4B4B;
+    }
+    span{
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.wrapper{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  &:hover .text_wrapper{
+    transform: translateY(0);
+  }
+  .image_wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    img{
+      height: 100%;
+    }
+  }
+  .text_wrapper{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    align-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: 300ms ease-in-out;
+    transform: translateY(100%);
+    color: white;
+  }
+}

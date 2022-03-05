@@ -7,7 +7,7 @@ import SchoolAdmissionContent from "../../Components/Contents/SchoolAdmission/Sc
 import GloryBoardContent from "../../Components/Contents/GloryBoard/GloryBoardContent";
 import NotificationContent from "../../Components/Contents/Notification/NotificationContent";
 import FeedbackContent from "../../Components/Contents/Feedback/FeedbackContent";
-
+import NewsContext from "../../Components/Contents/News/NewsContext/NewsContext";
 
 class AppRoutes{
 
@@ -16,6 +16,7 @@ class AppRoutes{
             {path: '/', content: <HomeContent/>, exact: true},
             {path: '/home', content: <HomeContent/>, exact: true},
             {path: '/news', content: <NewsContent/>, exact: true},
+            {path: '/news/context/:id', content: <NewsContext/>, exact: true},
             {path: '/gallery', content: <GalleryContent/>, exact: true},
             {path: '/timetable', content: <TimetableContent/>, exact: true},
             {path: '/teachers', content: <TeachersContent/>, exact: true},

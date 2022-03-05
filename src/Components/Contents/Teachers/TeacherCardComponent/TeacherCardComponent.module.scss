@@ -1,0 +1,41 @@
+.wrapper{
+  width: 800px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  display: flex;
+  margin-bottom: 20px;
+  .teacher_image{
+    width: 20%;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    img{
+      height: 100%;
+    }
+  }
+  .teacher_info{
+    width: 80%;
+    padding: 0 0 0 30px;
+
+    .text_block{
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      font-family: Roboto sans-serif;
+
+      .title{
+        width: 25%;
+        font-weight: bold;
+      }
+      .description{
+        width: 75%;
+        margin-left: 20px;
+      }
+    }
+  }
+}
