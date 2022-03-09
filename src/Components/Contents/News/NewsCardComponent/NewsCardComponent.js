@@ -2,7 +2,9 @@ import React from "react";
 import classes from "./NewsCardComponent.module.scss";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {show_current_news} from "../../../../redux/actions/newsPageActionCreator";
+import {changeNewsImage, show_current_news} from "../../../../redux/actions/newsPageActionCreator";
+import news_default_image from "../../../../Images/news_default_image.jpeg";
+import default_image from "../../../../Images/default_image.jpg";
 
 function NewsCardComponent(props){
     const navigate = useNavigate();
@@ -14,18 +16,19 @@ function NewsCardComponent(props){
         navigate(`/news/context/${id+1}`);
     }
 
+    const newsImageControl = (id, image)=>{
+        dispatch(changeNewsImage({id, image}));
+    }
+
     return(
         <div className={classes.card} onClick={(e)=>newsCardHandler(e, props.id)}>
-            <div className={classes.thumbnail}>
-                <img className={classes.left} src='https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true' alt=""/>
+            <img onError={()=>(newsImageControl(props.id, default_image))} src={props.data.News.file.length===0? news_default_image : props.data.News.file[0].file? props.data.News.file[0].file:news_default_image} alt=""/>
+            <div className={classes.text_block}>
+                <div>
+                    <h5>{props.data.News.title}</h5>
+                    <span>{props.data.News.created_at}</span>
+                </div>
             </div>
-            <div className={classes.right}>
-                <h1>{props.data.News.title}</h1>
-
-                <div className={classes.separator}></div>
-                <p>{props.data.News.description.slice(0, 100)+" ..."}</p>
-            </div>
-            <h6>{props.data.News.created_at}</h6>
         </div>
     )
 }

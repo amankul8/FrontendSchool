@@ -8,7 +8,7 @@ function GroupComponent(props){
     const dispatch = useDispatch();
 
     const timetableClickHandle = (e)=>{
-        dispatch(showModalWin({image: "https://61.edubish.kg/wp-content/uploads/sites/70/2021/11/7-kl-rasp-e.jpg", title: props.data.Schedule.class_no}));
+        dispatch(showModalWin({image: props.data.Schedule.file[0].file, title: props.data.Schedule.class_no}));
     }
 
     return(

@@ -11,6 +11,7 @@ $sliderReadyTrans: all $animTime/2 $animTime;
 $maxLettersStagger: 6;
 $letterStagger: 0.1s;
 
+
 .slider {
   overflow: hidden;
   position: relative;
@@ -98,8 +99,11 @@ $letterStagger: 0.1s;
     }
 
     &-subheading {
+      @media only screen and (max-width : 600px){
+        font-size: 12px;
+      }
       margin-bottom: 20px;
-      font-size: 24px;
+      font-size: 16px;
       letter-spacing: 2px;
       transform: translateY(20px);
 
@@ -107,8 +111,7 @@ $letterStagger: 0.1s;
     }
 
     &-heading {
-      $fontSize: 60px;
-
+      $fontSize: 30px;
       display: flex;
       margin-bottom: 20px;
       font-size: $fontSize;
@@ -332,5 +335,12 @@ $letterStagger: 0.1s;
   &--twitter {
     left: auto;
     right: 5px;
+  }
+}
+
+@media only screen and (max-width : 700px){
+  .slider{
+    width: 90vw;
+    height: 50vh;
   }
 }

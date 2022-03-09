@@ -2,7 +2,8 @@ import {
     HOME_CONTENT_SPINNER_DEACTIVATE,
     HOME_CONTENT_SPINNER_ACTIVATE,
     LOAD_HOME_ABOUT_DATA,
-    SET_HOME_ABOUT_DATA
+    SET_HOME_ABOUT_DATA,
+    CHANGE_HOME_INFO_BLOCKS_IMAGE_LINK
 } from "../types/homePageTypes";
 
 export function loadHomeAboutData(){
@@ -28,4 +29,13 @@ export function homeContentSpinnerDeactivate(){
     return{
         type: HOME_CONTENT_SPINNER_DEACTIVATE
     }
+}
+
+export function changeHomeInfoBlocksImageLink(payload){
+    return(
+        {
+            type: CHANGE_HOME_INFO_BLOCKS_IMAGE_LINK,
+            payload: payload
+        }
+    )
 }

@@ -25,7 +25,7 @@ function TeachersContent(){
             <div className={classes.content_block}>
                 {
                     teachers_state.teachers_spinner? <ContentSpinner/>:
-                        teachers_state.teachers.map((item, index)=>{
+                        teachers_state.teachers.length!==0? teachers_state.teachers.map((item, index)=>{
                             return(
                                 <TeacherCardComponent
                                     name={item.name}
@@ -37,7 +37,7 @@ function TeachersContent(){
                                     key={index}
                                 />
                             )
-                        })
+                        }): "Азырча маалымат жок"
                 }
             </div>
         </div>

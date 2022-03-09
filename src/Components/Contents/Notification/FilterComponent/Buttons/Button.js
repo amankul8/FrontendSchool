@@ -4,7 +4,7 @@ import classes from "./Button.module.scss";
 function Button(props){
 
     return(
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} onClick={props.clickHandler}>
             {props.text}
         </div>
     )

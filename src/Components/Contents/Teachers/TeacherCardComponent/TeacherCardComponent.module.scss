@@ -5,6 +5,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 20px;
   .teacher_image{
     width: 20%;
@@ -21,6 +22,7 @@
   .teacher_info{
     width: 80%;
     padding: 0 0 0 30px;
+    font-size: 16px;
 
     .text_block{
       margin-bottom: 20px;
@@ -36,6 +38,27 @@
         width: 75%;
         margin-left: 20px;
       }
+    }
+  }
+
+  @media only screen and (max-width : 800px){
+    .teacher_image{
+      width: 100%;
+      justify-content: start;
+      padding: 0 0 0 30px;
+    }
+    .teacher_info{
+      width: 100%;
+      margin-top: 10px;
+    }
+    .text_block{
+      font-size: 14px;
+    }
+  }
+
+  @media only screen and (max-width : 450px){
+    .text_block{
+      font-size: 12px;
     }
   }
 }

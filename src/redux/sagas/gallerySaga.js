@@ -1,11 +1,13 @@
 import {
     gallerySpinnerActivate,
     gallerySpinnerDeactivate,
-    setGalleryData
+    setGalleryData, setGalleryImageTitles
 } from "../actions/galleryPageActionCteator";
-import {LOAD_GALLERY_DATA} from "../types/galleryPageTypes";
+import {
+    LOAD_GALLERY_DATA
+} from "../types/galleryPageTypes";
 import appAxios from "../../Axios/appAxios";
-import {takeEvery, call, put} from "redux-saga/effects";
+import {takeEvery, call, put, fork} from "redux-saga/effects";
 
 // async function
 async function getGalleryImage(){
@@ -13,14 +15,29 @@ async function getGalleryImage(){
     return response.data.data;
 }
 
+async function getGalleryImageTitles(){
+    const response = await appAxios('/files/gallery/title/');
+    return response.data;
+}
+
 // worker
 
-function* getImages(){
+function* imagesHandlerWorker(){
     yield put(gallerySpinnerActivate());
     const gallery_data = yield call(getGalleryImage);
     yield put(setGalleryData(gallery_data));
     yield put(gallerySpinnerDeactivate());
+}
 
+function* imageTitlesHandlerWorker(){
+    const titles = yield call(getGalleryImageTitles);
+    yield put(setGalleryImageTitles(titles));
+}
+
+//-------------------------------------------------------
+function* getImages(){
+    yield call(imageTitlesHandlerWorker);
+    yield call(imagesHandlerWorker);
 }
 
 // watcher

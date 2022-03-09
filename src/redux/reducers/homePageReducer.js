@@ -1,4 +1,5 @@
 import {
+    CHANGE_HOME_INFO_BLOCKS_IMAGE_LINK,
     HOME_CONTENT_SPINNER_ACTIVATE,
     HOME_CONTENT_SPINNER_DEACTIVATE,
     SET_HOME_ABOUT_DATA
@@ -37,6 +38,10 @@ function homePageReducer(state=  initialState, action){
             return {...state, info_block_spinner: true}
         case HOME_CONTENT_SPINNER_DEACTIVATE:
             return {...state, info_block_spinner: false}
+        case CHANGE_HOME_INFO_BLOCKS_IMAGE_LINK:
+            let temp_state = {...state};
+            temp_state.info_blocks[action.payload.id_1].file[action.payload.id_2].file = action.payload.image
+            return temp_state;
         default:
             return state;
     }

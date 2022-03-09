@@ -3,7 +3,7 @@ import {
     LOAD_NEWS,
     SHOW_CURRENT_NEWS,
     NEWS_SPINNER_ACTIVATE,
-    NEWS_SPINNER_DEACTIVATE
+    NEWS_SPINNER_DEACTIVATE, CHANGE_NEWS_IMAGE
 } from "../types/newsPageTypes";
 
 export function load_news(){
@@ -35,5 +35,12 @@ export function newsSpinnerActivate(){
 export function newsSpinnerDeactivate(){
     return {
         type: NEWS_SPINNER_DEACTIVATE
+    }
+}
+
+export function changeNewsImage(payload){
+    return{
+        type: CHANGE_NEWS_IMAGE,
+        payload: payload
     }
 }

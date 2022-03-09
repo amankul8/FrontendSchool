@@ -25,11 +25,11 @@ function TimetableContent(){
             <div className={classes.content_block}>
                 {
                     timetable_state?.timetable_spinner?<ContentSpinner/>:
-                        timetable_state.timetables.map((item, index)=>{
+                        timetable_state.timetables.length!==0?timetable_state.timetables.map((item, index)=>{
                             return(
                                 <GroupComponent data={item} key={index}/>
                             )
-                        })
+                        }): "Азырынча маалымат жок"
                 }
             </div>
         </div>

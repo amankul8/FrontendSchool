@@ -26,12 +26,13 @@ function HomeContent(){
             <div className={classes.content_block}>
                 <SliderComponent slides={home_state.slides}/>
                 {
-                    home_state.info_block_spinner ? <ContentSpinner/>:
-                        home_state.info_blocks.map((item, index)=>{
+                    home_state.info_block_spinner? <ContentSpinner/>:
+                        home_state.info_blocks.length!==0 ?
+                            home_state.info_blocks.map((item, index)=>{
                             return(
-                                <ContentInfoBlock data={item} key={index}/>
+                                <ContentInfoBlock data={item} key={index} id={index}/>
                             )
-                        })
+                        }) : "Азырча маалымат жок"
                 }
             </div>
         </div>

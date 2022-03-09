@@ -1,79 +1,48 @@
 .card {
   position: relative;
-  height: 300px;
-  width: 700px;
-  margin: 20px auto;
+  height: 250px;
+  width: 350px;
+  margin: 10px;
   background-color: #FFF;
-  -webkit-box-shadow: 8px 8px 70px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 8px 8px 70px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 8px 8px 70px 0 rgba(0, 0, 0, 0.2);
-  transition: 500ms ease-in-out;
-  border-radius: 5px;
-  &:hover{
-    cursor: pointer;
-  }
-
-}
-
-/* Image on the left side */
-.thumbnail {
-  float: left;
-  position: relative;
-  left: 10px;
-  top:  10px;
-  height: 65%;
-  width: 45%;
-  transition: 500ms ease-in-out;
-  -webkit-box-shadow: 8px 8px 70px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 8px 8px 70px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 8px 8px 70px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
   border-radius: 5px;
+  transition: 500ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
   &:hover{
     cursor: pointer;
   }
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover ;
+  }
 }
 
-/*object-fit: cover;*/
-/*object-position: center;*/
-img.left {
+.text_block{
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-/* Right side of the card */
-.right {
-  margin-left: 50%;
-  margin-right: 2%;
-}
-
-h1 {
-  padding-top: 15px;
-  font-size: 1.3rem;
-  color: #4B4B4B;
-}
-
-.separator {
-  margin-top: 10px;
-  border: 1px solid #C3C3C3;
-}
-
-p {
-  text-align: justify;
-  padding-top: 10px;
-  font-size: 0.95rem;
-  line-height: 150%;
-  color: #4B4B4B;
-}
-
-/* DATE of release*/
-
-h6 {
-  position: absolute;
-  left: 30px;
-  bottom: -25px;
-  font-size: 1rem;
-  color: #C3C3C3;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  padding: 5px;
+  &:hover{
+    transition: 300ms ease-in-out;
+    border: 1px solid rgba(0,0,0,0.3);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 1) 100%);
+  }
+  h4{
+    display: block;
+    width: 100%;
+  }
+  span{
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+  }
 }

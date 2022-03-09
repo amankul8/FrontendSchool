@@ -3,18 +3,19 @@
   flex-wrap: wrap;
   align-items: start;
   justify-content: start;
-  font-family: sans-serif;
-  font-style: italic;
+  font-family: "PT_Root_UI",Arial, sans-serif;
+  line-height: 1.5;
   font-weight: normal;
   margin-bottom: 30px;
   .block_title{
     width: 100%;
-    height: 35px;
+    font-size: 20px;
     font-weight: bolder;
     border-bottom: solid 1px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    padding: 3px 0;
   }
   .image_block{
     width: 25%;
@@ -33,9 +34,23 @@
   .text_block{
     width: 75%;
     padding: 0 30px;
-    font-style: normal;
-    font-family: "PT_Root_UI", Arial sans-serif;
     font-weight: lighter;
     line-height: 1.3;
   }
 }
+@media only screen and (max-width : 600px){
+  .info_block_wrapper{
+    .block_title{
+      font-size: 16px;
+    }
+    .image_block{
+      width: 100%;
+    }
+    .text_block{
+      width: 100%;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+  }
+}
+

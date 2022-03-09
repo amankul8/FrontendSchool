@@ -1,7 +1,16 @@
 %content_wrapper{
   width: 78%;
+  @media only screen and (max-width : 700px){
+    width: 100%;
+  }
 }
 %content_in_block{
   width: 100%;
   padding: 0 50px;
+  @media only screen and (max-width : 700px){
+    padding: 0 30px;
+  }
+  @media only screen and (max-width : 500px){
+    padding: 0 20px;
+  }
 }

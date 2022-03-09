@@ -2,7 +2,7 @@ import {
     NEWS_SPINNER_DEACTIVATE,
     NEWS_SPINNER_ACTIVATE,
     SHOW_CURRENT_NEWS,
-    SET_NEWS
+    SET_NEWS, CHANGE_NEWS_IMAGE
 } from "../types/newsPageTypes";
 
 let initialState = {
@@ -24,6 +24,10 @@ function newsPageReducer(state=initialState, action){
             }
         case SET_NEWS:
             return {...state, news: action.payload}
+        case CHANGE_NEWS_IMAGE:
+            let temp_state = {...state};
+            temp_state.news[action.payload.id].News.file[0].file=action.payload.image
+            return temp_state;
         default:
             return state;
     }

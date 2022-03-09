@@ -25,11 +25,12 @@ function NewsContent(){
             <div className={classes.content_block}>
                 {
                     news_state.newsSpinner? <ContentSpinner/> :
-                        news_state.news.map((item, index)=>{
-                            return(
-                                <NewsCardComponent data={item} key={index} id={index}/>
-                            )
-                        })
+                        news_state.news.length!==0?
+                            news_state.news.map((item, index)=>{
+                                return(
+                                    <NewsCardComponent data={item} key={index} id={index}/>
+                                )
+                            }) : "Азырча маалымат жок"
                 }
             </div>
         </div>

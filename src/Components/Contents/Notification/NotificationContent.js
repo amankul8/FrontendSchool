@@ -29,11 +29,12 @@ function NotificationContent(){
                 <div className={classes.context_wrapper}>
                     {
                         notification_state.notice_spinner?<ContentSpinner/>:
-                        notification_state.notices.map((item, index)=>{
+                        notification_state.notices.length!==0?
+                            notification_state.notices.filter(item=>item.title===notification_state.current_notice_filter_value).map((item, index)=>{
                             return(
                                 <NotificationCard data={item} key={index}/>
                             )
-                        })
+                        }):"Азырча маалымат жок"
                     }
                 </div>
             </div>

@@ -9,15 +9,17 @@ import ContentSpinner from "./../../ContentSpinner/ContentSpinner.js";
 import {loadGalleryData} from "../../../redux/actions/galleryPageActionCteator";
 
 function GalleryContent(){
-
     const gallery_state = useSelector((state)=>state.gallery_state);
-    const dispatch = useDispatch();
 
     useEffect(()=>{
         if(gallery_state.images.length===0){
             dispatch(loadGalleryData());
         }
     }, [])
+
+    const dispatch = useDispatch();
+    let spinner = gallery_state.gallery_spinner;
+    let image_filter = gallery_state.active_filter_value;
 
     return(
         <div className={classes.home_content}>
@@ -29,16 +31,14 @@ function GalleryContent(){
                 </div>
                 <div className={classes.image_block}>
                     {
-                        gallery_state.gallery_spinner? <ContentSpinner/>:
-                            gallery_state.images?.map((item0, index)=>{
-                                return (
-                                    item0.Gallery.file.map((item1, index)=>{
-                                        return(
-                                            <ImageComponent data={item1} title={item0.Gallery.title} key={index}/>
-                                        )
-                                    })
+                        spinner? <ContentSpinner/>:
+                            gallery_state.images.length!==0?gallery_state.images.map((item, index)=>{
+                                return(
+                                    item.title===image_filter?
+                                        <ImageComponent data={item} key={index} id={index}/>:
+                                        null
                                 )
-                            })
+                            }): "Азырча сурот жок"
                     }
                 </div>
             </div>

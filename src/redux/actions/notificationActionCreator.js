@@ -1,7 +1,7 @@
 import {
     LOAD_NOTIFICATION_DATA,
     NOTIFICATION_SPINNER_ACTIVATE,
-    NOTIFICATION_SPINNER_DEACTIVATE,
+    NOTIFICATION_SPINNER_DEACTIVATE, SET_CURRENT_NOTICE_FILTER_VALUE,
     SET_NOTIFICATION_DATA
 } from "../types/notificationTypes";
 
@@ -28,5 +28,12 @@ export const noticeSpinnerActivate = ()=>{
 export const noticeSpinnerDeactivate = ()=>{
     return{
         type: NOTIFICATION_SPINNER_DEACTIVATE
+    }
+}
+
+export const setCurrentNoticeFilterValue=(payload)=>{
+    return{
+        type: SET_CURRENT_NOTICE_FILTER_VALUE,
+        payload:payload
     }
 }

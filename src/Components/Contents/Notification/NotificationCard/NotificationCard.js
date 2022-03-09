@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./NotificationCard.module.scss";
 
 function NotificationCard(props){
-
     return(
         <div className={classes.notice_wrapper}>
             <div className={classes.title}>

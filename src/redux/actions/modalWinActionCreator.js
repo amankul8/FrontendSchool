@@ -2,7 +2,7 @@ import {
     CLOSE_LOAD_MODAL_WINDOW,
     CLOSE_MODAL_WINDOW,
     SHOW_LOAD_MODAL_WINDOW,
-    SHOW_MODAL_WINDOW
+    SHOW_MODAL_WINDOW,
 } from "../types/modalWindowTypes";
 
 export function closeModalWin(){
