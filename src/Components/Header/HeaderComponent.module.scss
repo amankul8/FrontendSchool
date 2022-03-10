@@ -22,8 +22,18 @@
   }
 }
 
+@media only screen and (max-width : 800px){
+  .header_wrapper{
+    .icons_block{
+      padding: 0 30px;
+    }
+  }
+}
+
 @media only screen and (max-width : 600px){
   .header_wrapper{
-    justify-content: center;
+    .icons_block{
+      padding: 0 15px;
+    }
   }
 }

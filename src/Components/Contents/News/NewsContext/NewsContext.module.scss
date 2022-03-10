@@ -16,10 +16,10 @@
       border-radius: 5px;
     }
     strong{
+      font-size: $title_text_size_full_hd;
       display: block;
       width: 100%;
       margin: 5vh 0 1vh 0;
-      font-size: 20px;
     }
     img{
       margin: 20px 0;
@@ -27,15 +27,31 @@
       border-radius: 5px;
     }
     p{
-      font-family: "PT_Root_UI", Arial sans-serif;
-      font-size: 0.95rem;
-      line-height: 150%;
       color: #4B4B4B;
-    }
-    span{
-      font-size: 12px;
     }
   }
 }
 
+@media only screen and (max-width : 1500px){
+  .context_wrapper{
+    strong{
+      font-size: $title_text_size_hd;
+    }
+  }
+}
+
+@media only screen and (max-width : 1000px){
+  .context_wrapper{
+    strong{
+      font-size: $title_text_size_tablet;
+    }
+  }
+}
+@media only screen and (max-width : 600px){
+  .context_wrapper{
+    strong{
+      font-size: $title_text_size_phone;
+    }
+  }
+}
 

@@ -1,16 +1,30 @@
+@import "TextTypes";
+
 %content_wrapper{
-  width: 78%;
-  @media only screen and (max-width : 700px){
+  width: 80%;
+  @media only screen and (max-width : 800px){
     width: 100%;
+    height: 100%;
   }
 }
 %content_in_block{
+  font-family: $text_family;
+  font-size: $simple_text_size_full_hd;
   width: 100%;
-  padding: 0 50px;
-  @media only screen and (max-width : 700px){
-    padding: 0 30px;
+  padding: 20px 50px;
+  @media only screen and (max-width : 1500px){
+    font-size: $simple_text_size_hd;
+    padding: 20px 50px;
   }
-  @media only screen and (max-width : 500px){
-    padding: 0 20px;
+  @media only screen and (max-width : 1000px){
+    font-size: $simple_text_size_tablet;
+    padding: 15px 30px;
+  }
+  @media only screen and (max-width : 800px){
+    padding: 15px 20px;
+  }
+  @media only screen and (max-width : 600px){
+    font-size: $simple_text_size_phone;
+    padding: 10px 10px;
   }
 }

@@ -4,7 +4,6 @@
 
   .content_block{
     @extend %content_in_block;
-    padding: 30px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: start;

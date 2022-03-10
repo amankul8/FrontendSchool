@@ -1,14 +1,15 @@
+@import "../../../../Generic/Styles/TextTypes";
+
 .notice_wrapper{
   width: 100%;
   margin-bottom: 30px;
   padding: 40px 20px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-  font-family: Roboto sans-serif;
   .title{
+    font-size: $title_text_size_hd;
     padding: 10px 0;
     border-bottom: 1px solid rgba(0,0,0,0.3);
     font-weight: 600;
-    font-size: 18px;
   }
   .context{
     padding: 30px 0;
@@ -25,10 +26,21 @@
   }
 }
 
-@media only screen and (max-width : 500px){
+@media only screen and (max-width : 1500px){
   .notice_wrapper{
-    font-size: 12px;
-    margin-bottom: 15px;
-    padding: 20px 10px;
+    .title{
+      font-size: $title_text_size_hd;
+    }
+  }
+}
+
+@media only screen and (max-width : 1000px){
+  .notice_wrapper{
+    font-size: $title_text_size_tablet;
+  }
+}
+@media only screen and (max-width : 600px){
+  .notice_wrapper{
+    font-size: $title_text_size_phone;
   }
 }

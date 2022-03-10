@@ -1,5 +1,9 @@
+@import "../../Generic/Styles/TextTypes";
+
 .menu_wrapper{
-  width: 22%;
+  font-family: $text_family;
+  font-size: $title_text_size_full_hd;
+  width: 20%;
   background-color: #2F5AA8;
   position: relative;
   display: flex;
@@ -7,7 +11,7 @@
   align-items: start;
   justify-content: center;
   color: white;
-  font-size: 16px;
+  transition: 5ms ease-in-out;
   .block{
     width: 100%;
     display: flex;
@@ -24,32 +28,63 @@
     align-items: center;
     padding: 30px;
     border-top: 2px solid white;
-    font-style: italic;
   }
+  .menu_closing_icon{
+    display: none;
+  }
+  .menu_open_icon{
+    display: none;
+  }
+}
 
+@media only screen and (max-width : 1500px){
+  .menu_wrapper{
+    font-size: $title_text_size_hd;
+  }
 }
 
 @media only screen and (max-width : 1000px){
   .menu_wrapper{
-    font-size: 14px;
+    font-size: $title_text_size_tablet;
   }
 }
-@media only screen and (max-width : 700px){
+
+@media only screen and (max-width : 800px){
   .menu_wrapper{
-    width: 50%;
-    position: absolute;
+    width: 100vw;
+    position: fixed;
+    overflow-y: scroll;
     z-index: 100;
+    height: 100vh;
+    overflow-x: hidden;
     transform: translateX(-100%);
+    .block{
+      padding: 0 50px;
+    }
+
+    .menu_closing_icon{
+      display: flex;
+      position: absolute;
+      margin: 35px 0 0 75%;
+      background-color: #7391FC;
+      color: #7391FC;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      img{
+        width: 25px;
+        transition: 300ms ease-in-out;
+        &:hover{
+          width: 30px;
+        }
+      }
+    }
   }
 }
-@media only screen and (max-width : 600px){
-  .menu_wrapper{
-    width: 60%;
-    font-size: 12px;
-  }
-}
-@media only screen and (max-width : 400px){
-  .menu_wrapper{
-    width: 70%;
-  }
+
+.menu_active{
+  transform: translateX(0);
 }
