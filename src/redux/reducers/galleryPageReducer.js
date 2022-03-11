@@ -6,6 +6,7 @@ import {
     CHANGE_ERROR_GALLERY_IMAGE,
     CHANGE_GALLERY_FILTER_VALUE
 } from "../types/galleryPageTypes";
+import {baseFileUrl} from "../../appConfig/config";
 
 let initialState = {
     images: [],
@@ -18,7 +19,14 @@ let initialState = {
 function galleryPageReducer(state=initialState, action){
     switch (action.type){
         case SET_GALLERY_DATA:
-            return {...state, images: action.payload};
+            let data = action.payload.map(item=>{
+                item.file = item.file.map(item=>{
+                    item.file = baseFileUrl+item.file;
+                    return item
+                })
+                return item;
+            })
+            return {...state, images: data};
         case GALLERY_SPINNER_ACTIVATE:
             return {...state, gallery_spinner: true};
         case GALLERY_SPINNER_DEACTIVATE:

@@ -8,12 +8,12 @@ function GroupComponent(props){
     const dispatch = useDispatch();
 
     const timetableClickHandle = (e)=>{
-        dispatch(showModalWin({image: props.data.Schedule.file[0].file, title: props.data.Schedule.class_no}));
+        dispatch(showModalWin({image: props.data.file, title: props.data.class_no}));
     }
 
     return(
         <div className={classes.wrapper} onClick={timetableClickHandle}>
-            {props.data.Schedule.class_no}
+            {props.data.class_no + " класс"}
         </div>
     )
 }

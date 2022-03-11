@@ -5,6 +5,7 @@ import {
     GLORY_BOARD_SPINNER_DEACTIVATE,
     SET_GLORY_BOARD_DATA
 } from "../types/gloryBoardTypes";
+import {baseFileUrl} from "../../appConfig/config";
 
 const initial_state = {
 
@@ -23,11 +24,15 @@ function gloryBoardPageReducer(state=initial_state, action){
                 temp_list.add(item.glory_whom);
             })
             temp_list = Array.from(temp_list);
+            let data = action.payload.map(item=>{
+                item.avatar = baseFileUrl+item.avatar;
+                return item;
+            })
             return {
                 ...state,
                 current_filter_value: temp_list[0],
                 filter_list: temp_list,
-                images: action.payload
+                images: data
             };
         case GLORY_BOARD_SPINNER_ACTIVATE:
             return {...state, glory_board_spinner: true};

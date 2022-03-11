@@ -34,9 +34,11 @@ function GalleryContent(){
                         spinner? <ContentSpinner/>:
                             gallery_state.images.length!==0?gallery_state.images.map((item, index)=>{
                                 return(
-                                    item.title===image_filter?
-                                        <ImageComponent data={item} key={index} id={index}/>:
-                                        null
+                                    image_filter!==''?
+                                        item.title===image_filter?
+                                            <ImageComponent data={item} key={index} id={index}/>:
+                                            null:
+                                        <ImageComponent data={item} key={index} id={index}/>
                                 )
                             }): "Азырча сурот жок"
                     }

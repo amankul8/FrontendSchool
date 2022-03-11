@@ -6,6 +6,7 @@ import TeacherCardComponent from "./TeacherCardComponent/TeacherCardComponent";
 import {useDispatch, useSelector} from "react-redux";
 import {loadTeachersData} from "../../../redux/actions/teachersPageActionCreator";
 import ContentSpinner from "../../ContentSpinner/ContentSpinner";
+import default_image from "../../../Images/default_image.jpg";
 
 function TeachersContent(){
 
@@ -33,7 +34,7 @@ function TeachersContent(){
                                     subject={item.lesson}
                                     achievement={item.progress}
                                     contacts={item.contacts}
-                                    image={'https://cdn.vox-cdn.com/thumbor/xfYTqC9OomTEx0B1fPo_FLWFwbg=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22488210/Chalkbeat_20210503_EDUImages_AllisonShelleyEDUImages_004.jpg'}
+                                    image={item.avatar||default_image}
                                     key={index}
                                 />
                             )

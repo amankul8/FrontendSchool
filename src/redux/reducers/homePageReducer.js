@@ -4,7 +4,7 @@ import {
     HOME_CONTENT_SPINNER_DEACTIVATE,
     SET_HOME_ABOUT_DATA
 } from "../types/homePageTypes";
-
+import {baseFileUrl} from "../../appConfig/config";
 
 let initialState = {
     slides: [
@@ -33,7 +33,14 @@ function homePageReducer(state=  initialState, action){
 
     switch (action.type){
         case SET_HOME_ABOUT_DATA:
-            return {...state, info_blocks: action.payload}
+            let data = action.payload.map((item)=>{
+                item.file = item.file.map(item=>{
+                    item.file = baseFileUrl+item.file;
+                    return item;
+                })
+                return item;
+            })
+            return {...state, info_blocks: data}
         case HOME_CONTENT_SPINNER_ACTIVATE:
             return {...state, info_block_spinner: true}
         case HOME_CONTENT_SPINNER_DEACTIVATE:
