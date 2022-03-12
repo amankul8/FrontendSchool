@@ -10,8 +10,12 @@ import {
 
 // async function
 async function getTimetablesData(){
-    const response = await appAxios('/files/schedule/');
-    return response.data.data;
+    try {
+        const response = await appAxios('/files/schedule/');
+        return response.data.data;
+    }catch (e){
+        return [];
+    }
 }
 
 // worker

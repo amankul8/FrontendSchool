@@ -8,7 +8,7 @@ import {
 let initial_state = {
     notices:[],
     notice_spinner: false,
-    current_notice_filter_value: ''
+    current_notice_filter_value: 'all'
 }
 
 function notificationPageReducer(state=initial_state, action){

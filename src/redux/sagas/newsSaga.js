@@ -8,8 +8,12 @@ import {newsSpinnerActivate, newsSpinnerDeactivate, setNewsData} from "../action
 //async functions
 
 async function getNewsData(){
-    const response = await appAxios.get("/news/");
-    return response.data.data;
+    try{
+        const response = await appAxios.get("/news/");
+        return response.data.data;
+    }catch (e){
+        return [];
+    }
 }
 
 

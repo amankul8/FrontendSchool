@@ -337,16 +337,40 @@ $letterStagger: 0.1s;
 @media only screen and (max-width : 1500px){
   .slider{
     height: 50vh;
+    .slider__slide-subheading{
+      font-size: 18px;
+      text-align: center;
+    }
+    .slider__slide-heading{
+      font-size: 22px;
+      text-align: center;
+    }
   }
 }
 @media only screen and (max-width : 1000px){
   .slider{
     height: 48vh;
+    .slider__slide-subheading{
+      font-size: 14px;
+      text-align: center;
+    }
+    .slider__slide-heading{
+      font-size: 18px;
+      text-align: center;
+    }
   }
 }
 
 @media only screen and (max-width : 600px){
   .slider{
-    height: 45vh;
+    height: 30vh;
+    .slider__slide-subheading{
+      font-size: 12px;
+      text-align: center;
+    }
+    .slider__slide-heading{
+      font-size: 16px;
+      text-align: center;
+    }
   }
 }

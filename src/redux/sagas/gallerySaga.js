@@ -11,13 +11,21 @@ import {takeEvery, call, put, fork} from "redux-saga/effects";
 
 // async function
 async function getGalleryImage(){
-    const response = await appAxios('/files/gallery/');
-    return response.data.data;
+    try{
+        const response = await appAxios('/files/gallery/');
+        return response.data.data;
+    }catch (e){
+        return [];
+    }
 }
 
 async function getGalleryImageTitles(){
-    const response = await appAxios('/files/gallery/title/');
-    return response.data;
+    try{
+        const response = await appAxios('/files/gallery/title/');
+        return response.data;
+    }catch (e){
+        return [];
+    }
 }
 
 // worker

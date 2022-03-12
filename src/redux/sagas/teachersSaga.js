@@ -11,8 +11,12 @@ import {
 
 // async function
 async function getTeachersData(){
-    const response = await appAxios('/about_us/teachers');
-    return response.data.data;
+    try{
+        const response = await appAxios('/about_us/teachers');
+        return response.data.data;
+    }catch (e){
+        return [];
+    }
 }
 
 // worker

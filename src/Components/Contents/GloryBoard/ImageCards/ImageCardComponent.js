@@ -23,7 +23,7 @@ function ImageCardComponent(props){
                 <img onError={()=>{imageErrorHandler(props.data.id, default_image)}} src={props.data.avatar||default_image} alt=""/>
             </div>
             <div className={classes.text_wrapper}>
-                {props.data.name||'No class' + ' '+props.data.class_no||'No class'}
+                {props.data.name+' '+ (props.data.class_no===null? ' ':props.data.class_no)}
             </div>
         </div>
     )

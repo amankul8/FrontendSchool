@@ -5,9 +5,7 @@ import "./SliderComponent.scss";
 class SliderComponent extends React.Component {
     constructor(props) {
         super(props);
-
         this.IMAGE_PARTS = 3;
-
         this.changeTO = null;
         this.AUTOCHANGE_TIME = 4000;
 
@@ -44,36 +42,42 @@ class SliderComponent extends React.Component {
 
     render() {
         const { activeSlide, prevSlide, sliderReady } = this.state;
-        return (
-            <div className={classNames('slider', { 's--ready': sliderReady })}>
 
-                <div className="slider__slides">
-                    {this.props.slides.map((slide, index) => (
-                        <div
-                            className={classNames('slider__slide', { 's--active': activeSlide === index, 's--prev': prevSlide === index  })}
-                            key={slide.phrase}
-                        >
-                            <div className="slider__slide-content">
-                                <h3 className="slider__slide-subheading">{slide.phrase || slide.title}</h3>
-                                <h2 className="slider__slide-heading">
-                                    {slide.title.split('').map((l,i) => <span key={i}>{l}</span>)}
-                                </h2>
-                                <p className="slider__slide-readmore">read more</p>
+        if(this.props.slides.length===0){
+            return null
+        }else{
+            return (
+                <div className={classNames('slider', { 's--ready': sliderReady })}>
+
+                    <div className="slider__slides">
+                        {this.props.slides.map((slide, index) => (
+                            <div
+                                className={classNames('slider__slide', { 's--active': activeSlide === index, 's--prev': prevSlide === index  })}
+                                key={slide.sub_title||Math.random()}
+                            >
+                                <div className="slider__slide-content">
+                                    <h3 className="slider__slide-subheading">{slide.sub_title || 'Title'}</h3>
+                                    <h2 className="slider__slide-heading">
+                                        {slide.title.split('').map((l,i) => <span key={i}>{l}</span>)}
+                                    </h2>
+                                    <p className="slider__slide-readmore">read more</p>
+                                </div>
+                                <div className="slider__slide-parts">
+                                    {[...Array(this.IMAGE_PARTS).fill()].map((x, i) => (
+                                        <div className="slider__slide-part" key={i}>
+                                            <div className="slider__slide-part-inner" style={{ backgroundImage: `url(${slide.file})` }} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <div className="slider__slide-parts">
-                                {[...Array(this.IMAGE_PARTS).fill()].map((x, i) => (
-                                    <div className="slider__slide-part" key={i}>
-                                        <div className="slider__slide-part-inner" style={{ backgroundImage: `url(${slide.img})` }} />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                    <div className="slider__control" onClick={() => this.changeSlides(-1)} />
+                    <div className="slider__control slider__control--right" onClick={() => this.changeSlides(1)} />
                 </div>
-                <div className="slider__control" onClick={() => this.changeSlides(-1)} />
-                <div className="slider__control slider__control--right" onClick={() => this.changeSlides(1)} />
-            </div>
-        );
+            )
+        }
+
     }
 }
 

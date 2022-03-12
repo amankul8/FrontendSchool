@@ -25,16 +25,16 @@ function NewsContext(props){
                 <ContentTitleComponent contentName="Жанылык"/>
                 <div className={classes.context_wrapper}>
                     <button onClick={goBack}>{"<-Артка "}</button>
-                    <strong>{news_state.news[index].News.title?news_state.news[index].News.title:"No title"}</strong>
+                    <strong>{news_state.news[index].title?news_state.news[index].title:"No title"}</strong>
                     <p>
-                        {news_state.news[index].News.description?news_state.news[index].News.description:"No description"}
+                        {news_state.news[index].description?news_state.news[index].description:"No description"}
                     </p>
                     <span>
-                        Дата: {news_state.news[index].News.created_at?news_state.news[index].News.created_at:"No date"}
+                        Дата: {news_state.news[index].created_at?news_state.news[index].created_at:"No date"}
                     </span>
                     {
 
-                        <img src={news_state.news[index].News.file.length===0? news_default_image: news_state.news[index].News.file[0].file} alt=""/>
+                        <img src={news_state.news[index].file.length===0? news_default_image: news_state.news[index].file[0].file} alt=""/>
                     }
                 </div>
             </div>

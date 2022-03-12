@@ -8,19 +8,11 @@ function FilterComponent(){
 
     const dispatch = useDispatch();
 
-    function gloryFilterHandler(type){
-        if(type==='t'){
-            dispatch(setGloryBoardCurrentFilterValue('Мугалим'));
-        }else{
-            dispatch(setGloryBoardCurrentFilterValue('Окуучу'));
-        }
-    }
-
     return(
         <div className={classes.wrapper}>
             <div className={classes.filter}>
-                <Button text="Мугалимдер" clickHandler={()=>{gloryFilterHandler('t')}}/>
-                <Button text="Окуучулар" clickHandler={()=>{gloryFilterHandler('o')}}/>
+                <Button text="Мугалимдер" clickHandler={()=>{dispatch(setGloryBoardCurrentFilterValue('M'))}}/>
+                <Button text="Окуучулар" clickHandler={()=>{dispatch(setGloryBoardCurrentFilterValue('O'))}}/>
             </div>
         </div>
     )

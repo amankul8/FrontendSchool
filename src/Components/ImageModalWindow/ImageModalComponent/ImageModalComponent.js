@@ -7,7 +7,7 @@ function ImageModalComponent(props){
     return(
         <div className={classes.modal_window_context_wrapper}>
             <img src={props.image} alt=""/>
-            <p>{props.title}</p>
+            <p><a href={props.image} download>{props.title}</a></p>
         </div>
     )
 }

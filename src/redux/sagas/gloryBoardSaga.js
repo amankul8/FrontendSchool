@@ -11,8 +11,12 @@ import {
 
 // async function
 async function getGloryBoard(){
-    const response = await appAxios('/about_us/glory-board');
-    return response.data.data;
+    try{
+        const response = await appAxios('/about_us/glory-board');
+        return response.data.data;
+    }catch (e){
+        return []
+    }
 }
 
 // worker

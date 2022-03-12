@@ -5,14 +5,13 @@ import {
     GLORY_BOARD_SPINNER_DEACTIVATE,
     SET_GLORY_BOARD_DATA
 } from "../types/gloryBoardTypes";
-import {baseFileUrl} from "../../appConfig/config";
+import {baseFileUrl, baseFileUrl_with_media} from "../../appConfig/config";
 
 const initial_state = {
 
     images: [],
     glory_board_spinner:false,
-    filter_list: [],
-    current_filter_value: ''
+    current_filter_value: 'O'
 }
 
 function gloryBoardPageReducer(state=initial_state, action){
@@ -20,20 +19,16 @@ function gloryBoardPageReducer(state=initial_state, action){
 
     switch (action.type){
         case SET_GLORY_BOARD_DATA:
-            action.payload.map(item=>{
-                temp_list.add(item.glory_whom);
-            })
-            temp_list = Array.from(temp_list);
             let data = action.payload.map(item=>{
-                item.avatar = baseFileUrl+item.avatar;
+                let temp_arr = item.avatar.split('/');
+                if(temp_arr[0]==='media'||temp_arr[1]==='media'){
+                    item.avatar = baseFileUrl+item.avatar;
+                }else{
+                    item.avatar = baseFileUrl_with_media+item.avatar;
+                }
                 return item;
             })
-            return {
-                ...state,
-                current_filter_value: temp_list[0],
-                filter_list: temp_list,
-                images: data
-            };
+            return {...state, images: data};
         case GLORY_BOARD_SPINNER_ACTIVATE:
             return {...state, glory_board_spinner: true};
         case GLORY_BOARD_SPINNER_DEACTIVATE:

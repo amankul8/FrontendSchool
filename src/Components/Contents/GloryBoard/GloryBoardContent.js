@@ -28,7 +28,8 @@ function GloryBoardContent(){
                 <div className={classes.context_wrapper}>
                     {
                         school_board_state.glory_board_spinner ? <ContentSpinner/>:
-                            school_board_state.images.length!==0?school_board_state.images.filter(item=>item.glory_whom === cur_fil_val).map((item, index)=>{
+                            school_board_state.images.length!==0?school_board_state.images.filter(item=>item.glory_whom === cur_fil_val)
+                                .map((item, index)=>{
                                 return(
                                 <ImageCardComponent data={item} key={index}/>
                             )

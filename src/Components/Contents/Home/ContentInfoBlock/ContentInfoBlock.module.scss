@@ -46,6 +46,7 @@
     }
     .text_block{
       width: 100%;
+      padding: 20px 0px;
     }
   }
 }
@@ -54,9 +55,6 @@
   .info_block_wrapper{
     .block_title{
       font-size: $title_text_size_tablet;
-    }
-    .image_block{
-      width: 100%;
     }
     .text_block{
       width: 100%;

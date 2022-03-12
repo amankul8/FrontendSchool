@@ -12,6 +12,7 @@ import ContentSpinner from "../../ContentSpinner/ContentSpinner";
 function NotificationContent(){
 
     const notification_state = useSelector((state)=>state.notification_state);
+    let cur_state = notification_state.current_notice_filter_value
     const dispatch = useDispatch();
 
     useEffect(()=>{
@@ -29,12 +30,14 @@ function NotificationContent(){
                 <div className={classes.context_wrapper}>
                     {
                         notification_state.notice_spinner?<ContentSpinner/>:
-                        notification_state.notices.length!==0?
-                            notification_state.notices.filter(item=>item.title===notification_state.current_notice_filter_value).map((item, index)=>{
-                            return(
-                                <NotificationCard data={item} key={index}/>
-                            )
-                        }):"Азырча маалымат жок"
+                        notification_state.notices.length ===0?
+                            "Азырча маалымат жок":
+                            cur_state==='all'?
+                                notification_state.notices.map((item, index)=>{
+                                    return( <NotificationCard data={item} key={index}/> )
+                                }): notification_state.notices.filter(item=>item.human===cur_state).map((item, index)=>{
+                                    return( <NotificationCard data={item} key={index}/> )
+                                })
                     }
                 </div>
             </div>
@@ -43,3 +46,4 @@ function NotificationContent(){
 }
 
 export default NotificationContent;
+

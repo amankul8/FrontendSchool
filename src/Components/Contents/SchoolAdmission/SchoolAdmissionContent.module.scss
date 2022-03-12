@@ -1,8 +1,57 @@
 @import "../../../Generic/Styles/ContentsGenericStyles.scss";
+@import "../../../Generic/Styles/TextTypes";
 .home_content{
   @extend %content_wrapper;
 
   .content_block{
     @extend %content_in_block;
+    .title_block{
+      width: 100%;
+      font-size: $title_text_size_full_hd;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+    .text_block{
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .doc{
+      padding: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      a{
+        content: '';
+        display: block;
+        text-decoration: none;
+        margin-left: 3%;
+      }
+      span{
+        display: block;
+        padding: 0 10px 0 0;
+        margin-bottom: 5px;
+      }
+    }
   }
+  @media only screen and (max-width : 1500px){
+    .content_block{
+      .title_block{
+        font-size: $title_text_size_hd;
+      }
+    }
+  }
+  @media only screen and (max-width : 1000px){
+    .content_block{
+      .title_block{
+        font-size: $title_text_size_tablet;
+      }
+    }
+  }
+  @media only screen and (max-width : 600px){
+    .content_block{
+      .title_block{
+        font-size: $title_text_size_phone;
+      }
+    }
+  }
+
 }

@@ -3,7 +3,9 @@ import {
     HOME_CONTENT_SPINNER_ACTIVATE,
     LOAD_HOME_ABOUT_DATA,
     SET_HOME_ABOUT_DATA,
-    CHANGE_HOME_INFO_BLOCKS_IMAGE_LINK
+    CHANGE_HOME_INFO_BLOCKS_IMAGE_LINK,
+    LOAD_HOME_SLIDER_DATA,
+    SET_HOME_SLIDER_DATA
 } from "../types/homePageTypes";
 
 export function loadHomeAboutData(){
@@ -38,4 +40,17 @@ export function changeHomeInfoBlocksImageLink(payload){
             payload: payload
         }
     )
+}
+
+export function loadHomeSliderData(){
+    return{
+        type: LOAD_HOME_SLIDER_DATA
+    }
+}
+
+export function setHomeSliderData(payload){
+    return{
+        type: SET_HOME_SLIDER_DATA,
+        payload: payload
+    }
 }
