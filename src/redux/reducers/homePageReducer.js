@@ -18,7 +18,8 @@ function homePageReducer(state=  initialState, action){
 
     switch (action.type){
         case SET_HOME_ABOUT_DATA:
-            let data = action.payload.map((item)=>{
+            let data = [...action.payload];
+            data.map(item=>{
                 item.file = item.file.map(item=>{
                     let temp_arr = item.file.split('/');
                     if(temp_arr[0]==='media'||temp_arr[1]==='media'){
@@ -26,7 +27,7 @@ function homePageReducer(state=  initialState, action){
                     }else{
                         item.file = baseFileUrl_with_media+item.file;
                     }
-                    return item;
+                    return item
                 })
                 return item;
             })

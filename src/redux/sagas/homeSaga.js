@@ -13,7 +13,7 @@ async function getAboutSchool(){
 
     try{
         const response = await appAxios.get("/about_us/");
-        return response.data.data;
+        return response.data;
     }catch (e){
         return []
     }
@@ -35,7 +35,7 @@ async function getSliderData(){
 function* getHomeData(){
     yield put(homeContentSpinnerActivate());
     const home_data = yield call(getAboutSchool);
-    yield put(setHomeAboutData(home_data))
+    yield put(setHomeAboutData(home_data.data))
     yield put(homeContentSpinnerDeactivate());
 }
 
