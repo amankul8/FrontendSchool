@@ -21,7 +21,7 @@ function FeedbackContent(){
                     <span>об.Талас; р.Манас; ул.Манас 188</span>
                 </div>
                 <div className={classes.tel_contacts}>
-                    <strong>Телефон: </strong>
+                    <strong>Телефон номерлер: </strong>
                     <div className={classes.number_list}>
                         <span> <img src={Telephone} alt=""/> +966500457862</span>
                         <span> <img src={Telephone} alt=""/> +966500457862</span>
@@ -30,7 +30,7 @@ function FeedbackContent(){
                     </div>
                 </div>
                 <div className={classes.social_media}>
-                    <strong>Социальные сети: </strong>
+                    <strong>Социалдык тармактар: </strong>
                     <div className={classes.media_list}>
                         <span>
                             <img src={telegram} alt=""/>

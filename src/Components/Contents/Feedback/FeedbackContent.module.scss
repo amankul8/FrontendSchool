@@ -19,6 +19,9 @@ $padding: 30px 0;
       padding: $padding;
       display: flex;
       flex-wrap: wrap;
+      strong{
+        margin-bottom: 10px;
+      }
       .number_list{
         margin-left: 30px;
         width: 200px;
@@ -43,6 +46,9 @@ $padding: 30px 0;
       padding: $padding;
       display: flex;
       flex-wrap: wrap;
+      strong{
+        margin-bottom: 10px;
+      }
       .media_list{
         margin-left: 30px;
         width: 200px;

@@ -32,7 +32,7 @@
   }
   .text_block{
     width: 75%;
-    padding: 0 30px;
+    padding: 30px;
   }
 }
 
@@ -41,12 +41,8 @@
     .block_title{
       font-size: $title_text_size_hd;
     }
-    .image_block{
-      width: 100%;
-    }
     .text_block{
-      width: 100%;
-      padding: 20px 0px;
+      padding: 0px 20px;
     }
   }
 }
@@ -56,8 +52,12 @@
     .block_title{
       font-size: $title_text_size_tablet;
     }
+    .image_block{
+      width: 100%;
+    }
     .text_block{
       width: 100%;
+      padding: 10px 0;
     }
   }
 }
