@@ -8,6 +8,7 @@ import gloryBoardPageReducer from "./gloryBoardPageReducer";
 import notificationPageReducer from "./notificationPageReducer";
 import modalWindowReducer from "./modalWindowReducer";
 import timetablePageReducer from "./timetablePageReducer";
+import SchoolDocsReducer from "./schoolDocsReducer";
 
 export const rootReducer = combineReducers({
     home_state: homePageReducer,
@@ -18,5 +19,6 @@ export const rootReducer = combineReducers({
     school_board_state: gloryBoardPageReducer,
     notification_state: notificationPageReducer,
     modal_window_state: modalWindowReducer,
-    timetable_state: timetablePageReducer
+    timetable_state: timetablePageReducer,
+    school_docs_state: SchoolDocsReducer
 })

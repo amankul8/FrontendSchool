@@ -10,7 +10,7 @@ function MenuHeaderComponent(){
                 <img src={app_icon} alt=""/>
             </div>
             <div className={classes.app_name}>
-                №1 Асанов Асан атындагы жалы орто билим берүүчу мектеп
+                Талас шаарындагы жалпы билим берүүчү Абдуллаев Сагын атындагы №6 орто мектеби
             </div>
         </div>
     )

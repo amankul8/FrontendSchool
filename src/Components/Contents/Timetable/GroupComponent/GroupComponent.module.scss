@@ -4,13 +4,21 @@
   background-color: white;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 5px;
-  margin: 10px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 12px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   transition: 300ms ease-in-out;
+  text-decoration: none;
+  color: #7391FC;
+  img{
+    width: 14px;
+    margin-right: 5px;
+  }
   &:hover{
     cursor: pointer;
-    transform: scale(1.02);
+    transform: scale(1.01);
+    color: white;
+    background-color: #7391FC;
   }
 }

@@ -1,20 +1,15 @@
 import React from "react";
 import classes from "./GroupComponent.module.scss";
-import {useDispatch} from "react-redux";
-import {showModalWin} from "../../../../redux/actions/modalWinActionCreator";
+import {useNavigate} from "react-router-dom";
+
 
 function GroupComponent(props){
 
-    const dispatch = useDispatch();
-
-    const timetableClickHandle = (e)=>{
-        dispatch(showModalWin({image: props.data.file, title: props.data.class_no}));
-    }
-
     return(
-        <div className={classes.wrapper} onClick={timetableClickHandle}>
-            {props.data.class_no + " класс"}
-        </div>
+        <a href={props.data.file} className={classes.wrapper} download=''>
+            <img src="https://img.icons8.com/office/16/000000/download--v1.png" alt=''/>
+            {props.data.class_no}
+        </a>
     )
 }
 

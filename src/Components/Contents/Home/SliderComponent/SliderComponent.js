@@ -5,7 +5,7 @@ import "./SliderComponent.scss";
 class SliderComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.IMAGE_PARTS = 3;
+        this.IMAGE_PARTS = 2;
         this.changeTO = null;
         this.AUTOCHANGE_TIME = 4000;
 

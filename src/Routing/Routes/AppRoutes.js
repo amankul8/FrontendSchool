@@ -8,6 +8,8 @@ import GloryBoardContent from "../../Components/Contents/GloryBoard/GloryBoardCo
 import NotificationContent from "../../Components/Contents/Notification/NotificationContent";
 import FeedbackContent from "../../Components/Contents/Feedback/FeedbackContent";
 import NewsContext from "../../Components/Contents/News/NewsContext/NewsContext";
+import SchoolDocs from "../../Components/Contents/SchoolDocs/SchoolDocs";
+import Error_404 from "../../Components/Contents/Error_404/Error_404";
 
 class AppRoutes{
 
@@ -21,9 +23,11 @@ class AppRoutes{
             {path: '/timetable', content: <TimetableContent/>, exact: true},
             {path: '/teachers', content: <TeachersContent/>, exact: true},
             {path: '/school_admission', content: <SchoolAdmissionContent/>, exact: true},
+            {path: '/school_docs', content: <SchoolDocs/>, exact: true},
             {path: '/GloryBoard', content: <GloryBoardContent/>, exact: true},
             {path: '/notification', content: <NotificationContent/>, exact: true},
             {path: '/feedback', content: <FeedbackContent/>, exact: true},
+            {path: '*', content: <Error_404/>, exact: true},
         ]
     }
 

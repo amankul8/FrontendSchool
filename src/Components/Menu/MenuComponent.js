@@ -34,7 +34,7 @@ function MenuComponent(){
                 <MenuListComponent/>
             </div>
             <div className={classes.menuFooter}>
-                Көп жеген эрте семирет )
+                @redtrace.kg
             </div>
         </div>
     )
