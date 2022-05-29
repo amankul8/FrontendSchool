@@ -9,6 +9,7 @@ import notificationPageReducer from "./notificationPageReducer";
 import modalWindowReducer from "./modalWindowReducer";
 import timetablePageReducer from "./timetablePageReducer";
 import SchoolDocsReducer from "./schoolDocsReducer";
+import AkkreditatsiyaReducer from "./akkreditatsiyaReducer";
 
 export const rootReducer = combineReducers({
     home_state: homePageReducer,
@@ -20,5 +21,6 @@ export const rootReducer = combineReducers({
     notification_state: notificationPageReducer,
     modal_window_state: modalWindowReducer,
     timetable_state: timetablePageReducer,
-    school_docs_state: SchoolDocsReducer
+    school_docs_state: SchoolDocsReducer,
+    akkreditatsiya_state: AkkreditatsiyaReducer
 })

@@ -38,7 +38,7 @@ function TeachersContent(){
                                     key={index}
                                 />
                             )
-                        }): "Азырча маалымат жок"
+                        }): "Азырынча маалымат жок"
                 }
             </div>
         </div>

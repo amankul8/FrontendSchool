@@ -15,6 +15,7 @@ async function getGalleryImage(){
         const response = await appAxios('/files/gallery/');
         return response.data.data;
     }catch (e){
+        console.log(e);
         return [];
     }
 }

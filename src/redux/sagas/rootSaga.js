@@ -7,6 +7,7 @@ import teachersWatcherSaga from "./teachersSaga";
 import gloryBoardWatcherSaga from "./gloryBoardSaga";
 import notificationWatcherSaga from "./notificationSaga";
 import SchoolDocsSaga from "./schoolDocsSaga";
+import AkkrSaga from "./akkrSaga";
 
 function* rootSaga(){
     yield all([
@@ -17,7 +18,8 @@ function* rootSaga(){
         teachersWatcherSaga(),
         gloryBoardWatcherSaga(),
         notificationWatcherSaga(),
-        SchoolDocsSaga()
+        SchoolDocsSaga(),
+        AkkrSaga()
     ]);
 }
 

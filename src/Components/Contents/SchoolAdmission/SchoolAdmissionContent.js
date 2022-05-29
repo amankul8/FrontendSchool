@@ -43,7 +43,7 @@ function SchoolAdmissionContent(){
                                     )
                                 }): ""
                         }
-                    </div>: <p>Азырча маалымат жок</p>
+                    </div>: <p>Азырынча маалымат жок</p>
             }
         </div>
     )

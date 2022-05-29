@@ -31,7 +31,7 @@ function NotificationContent(){
                     {
                         notification_state.notice_spinner?<ContentSpinner/>:
                         notification_state.notices.length ===0?
-                            "Азырча маалымат жок":
+                            "Азырынча маалымат жок":
                             cur_state==='all'?
                                 notification_state.notices.map((item, index)=>{
                                     return( <NotificationCard data={item} key={index}/> )

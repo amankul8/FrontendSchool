@@ -56,22 +56,13 @@ function SchoolDocs(){
                                                 {item.created_at}
                                             </div>
                                             <div className={classes.docs_link}>
-                                                <div className={classes.docs_drop} onClick={(e)=>{
-                                                    docListRef.current.classList.toggle(classes.show);
-                                                }}>
-                                                    Документ
+                                                <div className={classes.docs_drop}>
                                                     {
-                                                        item.file.length===0?
-                                                            null :
-                                                            <div className={classes.dropdown_content} ref={docListRef} >
-                                                                {
-                                                                    item.file.map((item, index)=>{
-                                                                        return(
-                                                                            <a href={item.file} key={index}> Документ {' '+(index+1)} </a>
-                                                                        )
-                                                                    })
-                                                                }
-                                                            </div>
+                                                        item.file.length!==0?
+                                                            <a className={classes.a} href={item.file[0].file} download={true}> Көчүрүп алуу </a>:
+                                                            <span className={classes.span}>
+                                                                 Көчүрүүгө болбойт
+                                                            </span>
                                                     }
                                                 </div>
                                             </div>
@@ -81,7 +72,7 @@ function SchoolDocs(){
                                 })
                             }
                         </div>:
-                        "Азырча маалымат жок"
+                        "Азырынча маалымат жок"
             }
 
         </div>

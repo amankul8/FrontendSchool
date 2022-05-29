@@ -7,7 +7,7 @@ class SliderComponent extends React.Component {
         super(props);
         this.IMAGE_PARTS = 2;
         this.changeTO = null;
-        this.AUTOCHANGE_TIME = 4000;
+        this.AUTOCHANGE_TIME = 5000;
 
         this.state = { activeSlide: -1, prevSlide: -1, sliderReady: false };
     }
@@ -60,7 +60,6 @@ class SliderComponent extends React.Component {
                                     <h2 className="slider__slide-heading">
                                         {slide.title.split('').map((l,i) => <span key={i}>{l}</span>)}
                                     </h2>
-                                    <p className="slider__slide-readmore">read more</p>
                                 </div>
                                 <div className="slider__slide-parts">
                                     {[...Array(this.IMAGE_PARTS).fill()].map((x, i) => (

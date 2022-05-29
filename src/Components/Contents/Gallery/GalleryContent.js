@@ -40,7 +40,7 @@ function GalleryContent(){
                                             null:
                                         <ImageComponent data={item} key={index} id={index}/>
                                 )
-                            }): "Азырча сурот жок"
+                            }): "Азырынча сурот жок"
                     }
                 </div>
             </div>

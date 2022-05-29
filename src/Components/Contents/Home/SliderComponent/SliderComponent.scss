@@ -14,7 +14,7 @@ $letterStagger: 0.1s;
 .slider {
   overflow: hidden;
   position: relative;
-  height: 55vh;
+  height: 80vh;
   color: #fff;
   border-radius: 5px;
   margin-bottom: 50px;
@@ -336,7 +336,7 @@ $letterStagger: 0.1s;
 
 @media only screen and (max-width : 1500px){
   .slider{
-    height: 50vh;
+    height: 75vh;
     .slider__slide-subheading{
       font-size: 18px;
       text-align: center;

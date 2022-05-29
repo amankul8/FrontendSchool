@@ -30,7 +30,7 @@ function NewsContent(){
                                 return(
                                     <NewsCardComponent data={item} key={index} id={index}/>
                                 )
-                            }) : "Азырча маалымат жок"
+                            }) : "Азырынча маалымат жок"
                 }
             </div>
         </div>

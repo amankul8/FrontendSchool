@@ -33,7 +33,7 @@ function GloryBoardContent(){
                                 return(
                                 <ImageCardComponent data={item} key={index}/>
                             )
-                        }): "Азырча малымат жок"
+                        }): "Азырынча малымат жок"
                     }
                 </div>
             </div>

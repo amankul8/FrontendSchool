@@ -11,6 +11,10 @@ import Telephone from "../../../Images/telephone.png";
 
 function FeedbackContent(){
 
+    const socMediaClickHandler=()=>{
+        alert("Азырынча маалымат жок")
+    }
+
     return(
         <div className={classes.home_content}>
             <HeaderComponent/>
@@ -18,37 +22,41 @@ function FeedbackContent(){
             <div className={classes.content_block}>
                 <div className={classes.address}>
                     <strong>Адрес: </strong>
-                    <span>об.Талас; р.Манас; ул.Манас 188</span>
+                    <span> Талас шаары, А.Оторбаев көчөсү №253</span>
                 </div>
                 <div className={classes.tel_contacts}>
-                    <strong>Телефон номерлер: </strong>
+                    <strong>Уюлдук телефон: </strong>
                     <div className={classes.number_list}>
-                        <span> <img src={Telephone} alt=""/> +966500457862</span>
-                        <span> <img src={Telephone} alt=""/> +966500457862</span>
-                        <span> <img src={Telephone} alt=""/>  +966500457862</span>
-                        <span> <img src={Telephone} alt=""/> +966500457862</span>
+                        <span> <img src={Telephone} alt=""/> +966703307390</span>
+                    </div>
+
+                </div>
+                <div className={classes.tel_contacts}>
+                    <strong>Электрондук почта: </strong>
+                    <div className={classes.number_list}>
+                        <span>osmonalievagulsaira1976@gmail.com</span>
                     </div>
                 </div>
                 <div className={classes.social_media}>
                     <strong>Социалдык тармактар: </strong>
                     <div className={classes.media_list}>
-                        <span>
+                        <span onClick={socMediaClickHandler}>
                             <img src={telegram} alt=""/>
                             Телеграм
-                        </span>
-                        <span>
+                        </span >
+                        <span onClick={socMediaClickHandler}>
                             <img src={whatsapp} alt=""/>
                             WhatsApp
                         </span>
-                        <span>
+                        <span onClick={socMediaClickHandler}>
                             <img src={instagram} alt=""/>
                             Instagram
                         </span>
-                        <span>
+                        <span onClick={socMediaClickHandler}>
                             <img src={facebook} alt=""/>
                             Facebook
                         </span>
-                        <span>
+                        <span onClick={socMediaClickHandler}>
                             <img src={tik_tok} alt=""/>
                             Tik Tok
                         </span>

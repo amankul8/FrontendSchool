@@ -7,7 +7,7 @@ function ContentSpinner(){
 
     return(
         <div className={classes.spinner_wrapper}>
-            <HashLoader color='#36D7B7'/>
+            <HashLoader color='#7391FC'/>
         </div>
     )
 }
