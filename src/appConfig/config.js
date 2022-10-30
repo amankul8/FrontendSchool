@@ -1,3 +1,3 @@
-export const baseApiUrl = 'https://89-108-70-125.cloudvps.regruhosting.ru/api/';
-export const baseFileUrl = 'https://89-108-70-125.cloudvps.regruhosting.ru/';
-export const baseFileUrl_with_media = 'https://89-108-70-125.cloudvps.regruhosting.ru/media/';
+export const baseApiUrl = 'http://134.122.74.82/api/';
+export const baseFileUrl = 'http://134.122.74.82/';
+export const baseFileUrl_with_media = 'http://134.122.74.82/media/';
