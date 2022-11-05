@@ -3,7 +3,6 @@ import {
     HOME_CONTENT_SPINNER_ACTIVATE,
     HOME_CONTENT_SPINNER_DEACTIVATE,
     SET_HOME_ABOUT_DATA,
-    LOAD_HOME_SLIDER_DATA,
     SET_HOME_SLIDER_DATA
 } from "../types/homePageTypes";
 import {baseFileUrl, baseFileUrl_with_media} from "../../appConfig/config";
@@ -21,6 +20,7 @@ function homePageReducer(state=  initialState, action){
             let data = [...action.payload];
             data.map(item=>{
                 item.file = item.file.map(item=>{
+                    console.log(item);
                     let temp_arr = item.file.split('/');
                     if(temp_arr[0]==='media'||temp_arr[1]==='media'){
                         item.file = baseFileUrl+item.file;

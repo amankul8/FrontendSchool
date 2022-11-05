@@ -45,7 +45,7 @@ function* getHomeSliders(){
 }
 
 function* homeWorker(){
-    yield fork(getHomeSliders);
+    //yield fork(getHomeSliders);
     yield fork(getHomeData);
 }
 

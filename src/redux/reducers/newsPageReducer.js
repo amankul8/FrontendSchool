@@ -23,7 +23,7 @@ function newsPageReducer(state=initialState, action){
             return {...state, currentNews: action.payload}
         case SET_NEWS:
             let data = action.payload.map(item=>{
-                item.file = item.file.map(item=>{
+                item.file = item.News.file.map(item=>{
                     let temp_arr = item.file.split('/');
                     if(temp_arr[0]==='media'||temp_arr[1]==='media'){
                         item.file = baseFileUrl+item.file;

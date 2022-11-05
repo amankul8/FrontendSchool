@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 
 
 function GroupComponent(props){
+    console.log(props);
 
     return(
         <a href={props.data.file} className={classes.wrapper} download=''>

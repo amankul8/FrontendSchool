@@ -8,6 +8,19 @@ import {useSelector, useDispatch} from "react-redux";
 import {loadHomeAboutData} from "../../../redux/actions/homePageActionCreator";
 import ContentSpinner from "../../ContentSpinner/ContentSpinner";
 
+const slides = [
+    {
+        title: 'asdfasd',
+        subtitle: 'asdfvasdf',
+        file: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Humboldt_High_School_1920.jpg'
+    },
+    {
+        title: 'asdfas',
+        subtitle: 'asfvasdf',
+        file: 'https://c8.alamy.com/comp/KMMWE9/a-school-class-france-1920s-KMMWE9.jpg'
+    }
+]
+
 function HomeContent(){
 
     let home_state = useSelector((state)=>state.home_state);
@@ -24,7 +37,7 @@ function HomeContent(){
             <HeaderComponent/>
             <ContentTitleComponent contentName="Башкы"/>
             <div className={classes.content_block}>
-                <SliderComponent slides={home_state.slides}/>
+                <SliderComponent slides={slides}/>
                 {
                     home_state.info_block_spinner? <ContentSpinner/>:
                         home_state.info_blocks.length!==0 ?

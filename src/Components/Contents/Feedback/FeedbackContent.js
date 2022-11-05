@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./FeedbackContent.module.scss";
 import HeaderComponent from "../../Header/HeaderComponent";
 import ContentTitleComponent from "../ContentTitleComponent/ContentTitleComponent";
-import telegram from "../../../Images/SocialNetworksIcons /Telegram.png";
-import whatsapp from "../../../Images/SocialNetworksIcons /WhatsApp.png";
-import instagram from "../../../Images/SocialNetworksIcons /Instagram.png";
-import tik_tok from "../../../Images/SocialNetworksIcons /TikTok.png";
-import facebook from "../../../Images/SocialNetworksIcons /Facebook.png";
+import telegram from "../../../Images/SocialNetworksIcons/t_gram.png";
+import whatsapp from "../../../Images/SocialNetworksIcons/w_app.png";
+import instagram from "../../../Images/SocialNetworksIcons/i_gram.png";
+import tik_tok from "../../../Images/SocialNetworksIcons/t_tok.png";
+import facebook from "../../../Images/SocialNetworksIcons/f_book.png";
 import Telephone from "../../../Images/telephone.png";
 
 function FeedbackContent(){
