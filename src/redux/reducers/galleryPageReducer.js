@@ -20,7 +20,7 @@ function galleryPageReducer(state=initialState, action){
     switch (action.type){
         case SET_GALLERY_DATA:
             let data = action.payload.map(item=>{
-                item.file = item.file.map(item=>{
+                item.file = item.Gallery.file.map(item=>{
                     let temp_arr = item.file.split('/');
                     if(temp_arr[0]==='media'||temp_arr[1]==='media'){
                         item.file = baseFileUrl+item.file;

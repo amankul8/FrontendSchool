@@ -4,11 +4,14 @@ import {useNavigate} from "react-router-dom";
 
 
 function GroupComponent(props){
-
     return(
-        <a href={props.data.file} className={classes.wrapper} download=''>
-            {props.data.class_no}
-        </a>
+        props.data.Schedule.file.map((item, index)=>{
+            return(
+                <a href={item.file} className={classes.wrapper} download='' key={index}>
+                    {props.data.Schedule.class_no}
+                </a>
+            )
+        })
     )
 }
 

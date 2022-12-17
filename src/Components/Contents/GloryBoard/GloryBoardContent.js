@@ -18,7 +18,6 @@ function GloryBoardContent(){
             dispatch(loadGloryBoardData());
         }
     }, [])
-
     return(
         <div className={classes.home_content}>
             <HeaderComponent/>

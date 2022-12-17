@@ -11,8 +11,8 @@ function FilterComponent(){
     return(
         <div className={classes.wrapper}>
             <div className={classes.filter}>
-                <Button text="Мугалимдер" clickHandler={()=>{dispatch(setGloryBoardCurrentFilterValue('M'))}}/>
-                <Button text="Окуучулар" clickHandler={()=>{dispatch(setGloryBoardCurrentFilterValue('O'))}}/>
+                <Button text="Мугалимдер" clickHandler={()=>{dispatch(setGloryBoardCurrentFilterValue('Мугалим'))}}/>
+                <Button text="Окуучулар" clickHandler={()=>{dispatch(setGloryBoardCurrentFilterValue('Окуучу'))}}/>
             </div>
         </div>
     )

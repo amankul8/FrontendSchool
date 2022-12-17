@@ -11,7 +11,7 @@ const initial_state = {
 
     images: [],
     glory_board_spinner:false,
-    current_filter_value: 'O'
+    current_filter_value: 'Окуучу'
 }
 
 function gloryBoardPageReducer(state=initial_state, action){

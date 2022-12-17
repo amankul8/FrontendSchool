@@ -1,83 +1,51 @@
 import React from "react";
-import classNames from "classnames";
 import "./SliderComponent.scss";
 
-class SliderComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.IMAGE_PARTS = 2;
-        this.changeTO = null;
-        this.AUTOCHANGE_TIME = 5000;
+// import Swiper core and required modules
+import {Pagination, Autoplay} from 'swiper';
 
-        this.state = { activeSlide: -1, prevSlide: -1, sliderReady: false };
-    }
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-    componentWillUnmount() {
-        window.clearTimeout(this.changeTO);
-    }
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-    componentDidMount() {
-        this.runAutochangeTO();
-        setTimeout(() => {
-            this.setState({ activeSlide: 0, sliderReady: true });
-        }, 0);
-    }
+export default function(props){
 
-    runAutochangeTO() {
-        this.changeTO = setTimeout(() => {
-            this.changeSlides(1);
-            this.runAutochangeTO();
-        }, this.AUTOCHANGE_TIME);
-    }
-
-    changeSlides(change) {
-        window.clearTimeout(this.changeTO);
-        const { length } = this.props.slides;
-        const prevSlide = this.state.activeSlide;
-        let activeSlide = prevSlide + change;
-        if (activeSlide < 0) activeSlide = length - 1;
-        if (activeSlide >= length) activeSlide = 0;
-        this.setState({ activeSlide, prevSlide });
-    }
-
-    render() {
-        const { activeSlide, prevSlide, sliderReady } = this.state;
-
-        if(this.props.slides.length===0){
-            return null
-        }else{
-            return (
-                <div className={classNames('slider', { 's--ready': sliderReady })}>
-
-                    <div className="slider__slides">
-                        {this.props.slides.map((slide, index) => (
-                            <div
-                                className={classNames('slider__slide', { 's--active': activeSlide === index, 's--prev': prevSlide === index  })}
-                                key={slide.sub_title||Math.random()}
-                            >
-                                <div className="slider__slide-content">
-                                    <h3 className="slider__slide-subheading">{slide.sub_title || 'Title'}</h3>
-                                    <h2 className="slider__slide-heading">
-                                        {slide.title.split('').map((l,i) => <span key={i}>{l}</span>)}
-                                    </h2>
-                                </div>
-                                <div className="slider__slide-parts">
-                                    {[...Array(this.IMAGE_PARTS).fill()].map((x, i) => (
-                                        <div className="slider__slide-part" key={i}>
-                                            <div className="slider__slide-part-inner" style={{ backgroundImage: `url(${slide.file})` }} />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="slider__control" onClick={() => this.changeSlides(-1)} />
-                    <div className="slider__control slider__control--right" onClick={() => this.changeSlides(1)} />
-                </div>
-            )
-        }
-
-    }
+    return(
+        <div className="slider_wrapper">
+            <Swiper
+                autoPlay={{
+                     delay: 2500,
+                    disableOnInteraction: false
+                }}
+                modules={[Autoplay, Pagination]}
+                spaceBetween={50}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                onSwiper={(swiper) => {}}
+                onSlideChange={() => {}}
+            >
+                {
+                    props.slides.length > 0 ?
+                        props.slides.map((item, index)=>{
+                            return (
+                             <SwiperSlide key={index}>
+                                 <div className="slide_wrap">
+                                     <img  src={item.file} alt=""/>
+                                     <p>{item.title}</p>
+                                 </div>
+                             </SwiperSlide>
+                            )
+                        })
+                         :
+                        ''
+                }
+            </Swiper>
+        </div>
+    )
 }
 
-export default SliderComponent;
+

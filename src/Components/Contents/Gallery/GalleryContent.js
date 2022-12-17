@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import classes from "./Gallery.module.scss";
 import HeaderComponent from "../../Header/HeaderComponent";
 import ContentTitleComponent from "../ContentTitleComponent/ContentTitleComponent";
-import FilterDropListComponent from "./FilterDropListComponent/FilterDropListComponent";
 import ImageComponent from "./ImagComponent/ImageComponent";
 import {useDispatch, useSelector} from "react-redux";
 import ContentSpinner from "./../../ContentSpinner/ContentSpinner.js";
@@ -20,14 +19,12 @@ function GalleryContent(){
     const dispatch = useDispatch();
     let spinner = gallery_state.gallery_spinner;
     let image_filter = gallery_state.active_filter_value;
-
     return(
         <div className={classes.home_content}>
             <HeaderComponent/>
             <ContentTitleComponent contentName="Фотогалерея"/>
             <div className={classes.content_block}>
                 <div className={classes.filter_wrapper}>
-                    <FilterDropListComponent/>
                 </div>
                 <div className={classes.image_block}>
                     {
@@ -35,10 +32,10 @@ function GalleryContent(){
                             gallery_state.images.length!==0?gallery_state.images.map((item, index)=>{
                                 return(
                                     image_filter!==''?
-                                        item.title===image_filter?
-                                            <ImageComponent data={item} key={index} id={index}/>:
+                                        item.Gallery.title===image_filter?
+                                            <ImageComponent data={item.Gallery} key={index} id={index}/>:
                                             null:
-                                        <ImageComponent data={item} key={index} id={index}/>
+                                        <ImageComponent data={item.Gallery} key={index} id={index}/>
                                 )
                             }): "Азырынча сурот жок"
                     }

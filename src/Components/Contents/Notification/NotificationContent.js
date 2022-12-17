@@ -35,7 +35,7 @@ function NotificationContent(){
                             cur_state==='all'?
                                 notification_state.notices.map((item, index)=>{
                                     return( <NotificationCard data={item} key={index}/> )
-                                }): notification_state.notices.filter(item=>item.human===cur_state).map((item, index)=>{
+                                }): notification_state.notices.filter(item=>item.for_whom===cur_state).map((item, index)=>{
                                     return( <NotificationCard data={item} key={index}/> )
                                 })
                     }

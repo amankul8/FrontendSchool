@@ -15,10 +15,10 @@ function FilterComponent(){
     return(
         <div className={classes.wrapper}>
             <div className={classes.filter}>
-                <Button text="Мугалимдер учун" clickHandler={()=>{noticeFilterHandler("M")}}/>
-                <Button text="Окуучулар учун" clickHandler={()=>{noticeFilterHandler("O")}}/>
-                <Button text="Ата-энелер учун" clickHandler={()=>{noticeFilterHandler("P")}}/>
-                <Button text="All" clickHandler={()=>{noticeFilterHandler("all")}}/>
+                <Button text="Мугалимдер" clickHandler={()=>{noticeFilterHandler("Мугалимдер үчүн")}}/>
+                <Button text="Окуучулар" clickHandler={()=>{noticeFilterHandler("Окуучулар үчүн")}}/>
+                <Button text="Ата-энелер" clickHandler={()=>{noticeFilterHandler("Ата-энелер үчүн")}}/>
+                <Button text="Жалпы" clickHandler={()=>{noticeFilterHandler("all")}}/>
             </div>
         </div>
     )

@@ -8,7 +8,7 @@ import ContentSpinner from "../../ContentSpinner/ContentSpinner";
 
 function Akkreditatsiya(props){
 
-    let [filter, setFilter] = useState('Программалык');
+    let [filter, setFilter] = useState('1');
     const akkr_docs = useSelector((state)=>state.akkreditatsiya_state);
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -21,7 +21,7 @@ function Akkreditatsiya(props){
 
     function filterHandler(value){
         setFilter(value);
-        if(value==='Программалык'){
+        if(value==='1'){
             p_ref.current.classList.add(classes.active);
             i_ref.current.classList.remove(classes.active);
         }else{
@@ -30,18 +30,17 @@ function Akkreditatsiya(props){
         }
     }
 
-    let docs = akkr_docs.docs.filter(item=>item.type===filter);
-
+    let docs = akkr_docs.docs.filter(item=>item.file_type===filter);
     return(
         <div className={classes.wrapper}>
             <HeaderComponent/>
             <ContentTitleComponent contentName="Аккредитация"/>
             <div className={classes.content}>
                 <div className={classes.filter_wrapper}>
-                    <button className={classes.filter_button} ref={p_ref} onClick={()=>{filterHandler('Программалык')}}>
+                    <button className={classes.filter_button} ref={p_ref} onClick={()=>{filterHandler('1')}}>
                         Программалык
                     </button>
-                    <button className={classes.filter_button} ref={i_ref} onClick={()=>{filterHandler('Институционалдык')}}>
+                    <button className={classes.filter_button} ref={i_ref} onClick={()=>{filterHandler('2')}}>
                         Институционалдык
                     </button>
                 </div>
@@ -76,7 +75,7 @@ function Akkreditatsiya(props){
                                                     {item.title}
                                                 </div>
                                                 <div className={classes.type}>
-                                                    {item.type.slice(0,6)}...
+                                                    {item.file_type === '1' ? 'Прог...': 'Инст...'}
                                                 </div>
                                                 <div className={classes.docs_link}>
                                                     <div className={classes.docs_drop}>
